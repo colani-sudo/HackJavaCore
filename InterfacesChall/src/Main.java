@@ -12,8 +12,19 @@ public class Main {
         System.out.println(tim);
         tim.setWeapon("Sword");
         savedObject(tim);
-        loadObject(tim);
+        //loadObject(tim);
         System.out.println(tim);
+
+        ISaveable werewolf = new Monster("Werewolf", 20, 40);
+        //calling a get method or set method using an interface object
+        //this is called casting
+        System.out.println("Strength = " + ((Monster) werewolf).getStrength());
+        //System.out.println(werewolf);
+        savedObject(werewolf);
+
+        //You can also call a getter or setter method using the normal method
+        Monster werewolf2 = new Monster("Werewolf", 20, 40);
+        System.out.println("Strength = " + werewolf2.getStrength());
     }
     public static ArrayList<String> readValues(){
         ArrayList<String> values = new ArrayList<String>();
